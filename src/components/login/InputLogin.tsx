@@ -1,22 +1,21 @@
-import React, { useState } from "react";
 import Input from "@mui/joy/Input";
+import { iInputLogin } from "../../types/interfaces";
 
-interface iProps {
-  type: string;
-}
 
-export const InputLogin: React.FC<iProps> = ({ type }) => {
-  const [userMail, setUserMail] = useState<string>("");
+
+export const InputLogin: React.FC<iInputLogin> = ({ type, setUserData, userData }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setUserMail(e.target.value);
+    setUserData(e.target.value);
   };
 
+  
+  
   return (
     <Input
       type={type}
       placeholder={type === "email" ? "Email" : "Password"}
-      value={userMail}
+      value={userData ?? ''}
       onChange={handleChange}
       size="lg"
     />
