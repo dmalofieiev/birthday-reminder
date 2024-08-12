@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "eae5ab87-b231-4b31-8ad7-b30622be2268",
+      "name": "dimon",
+      "surName": "dimon",
+      "email": "maloy34522@gmail.com",
+      "password": "123123123",
+      "dateOfBirth": "1996-11-22"
+    }
+  ]
+}
