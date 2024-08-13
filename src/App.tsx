@@ -1,6 +1,11 @@
 import React from "react";
-import "./App.css";
+import { useRoutes } from "react-router-dom";
+import { routes } from "./routes";
 
-export const App: React.FC = () => {
-  return <div></div>;
+const App: React.FC = () => {
+    const isLoggedIn = true;
+
+    return useRoutes(routes(isLoggedIn));
 };
+
+export default App;

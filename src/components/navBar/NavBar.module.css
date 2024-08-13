@@ -1,0 +1,58 @@
+.header {
+    width: 100%; /* Занимаем полную ширину */
+    max-width: 1300px; /* Максимальная ширина */
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center; /* Центрируем элементы по горизонтали */
+    align-items: center; /* Центрируем элементы по вертикали */
+    gap: 20px;
+    background-color: #f7f7f7; /* Маленький фоновый цвет */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    box-sizing: border-box;
+}
+
+.header p {
+    position: relative;
+    margin: 0;
+}
+
+.header p:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Вертикальное центрирование */
+    right: -10px;
+    height: 100%; /* Высота линии */
+    width: 2px;
+    background-color: black;
+    transform: translateY(-50%); /* Центрируем вертикально */
+}
+
+.text {
+    font-size: 22px;
+    font-weight: bold; /* Полужирный шрифт */
+    color: #333; /* Темно-серая текстовая окраска */
+}
+
+.text a {
+    text-decoration: none;
+    color: inherit; /* Унаследуем цвет текста */
+    padding: 10px 15px; /* Добавим отступы */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s; /* Плавность при наведении */
+}
+
+.text a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+    display: flex; /* Flexbox для выравнивания */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    width: 50px; /* Ширина для аватара */
+    height: 50px; /* Высота для аватара */
+}

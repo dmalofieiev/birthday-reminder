@@ -7,7 +7,7 @@ import {
   DialogTitle,
   TextField,
 } from "@mui/material";
-import { ISingUp, IUserData } from "../types/interfaces";
+import { ISingUp, IUserData } from "../../types/interfaces";
 import { v4 as uuidv4 } from "uuid";
 
 export const SingUp: React.FC<ISingUp> = ({
