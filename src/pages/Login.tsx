@@ -5,6 +5,41 @@ import { useState } from "react";
 import { SingUp } from "./SingUp";
 import { IUserData } from "../types/interfaces";
 
+const styles = {
+  container: {
+    display: "flex" as const,
+    flexDirection: "column" as const,
+    alignItems: "center" as const,
+    justifyContent: "center" as const,
+    height: "100vh",
+    backgroundColor: "#f0f0f0",
+    padding: "20px",
+    borderRadius: "8px",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+  },
+  title: {
+    marginBottom: "20px",
+    color: "#333",
+  },
+  inputWrapper: {
+    marginBottom: "15px",
+  },
+  buttonWrapper: {
+    marginBottom: "15px",
+  },
+  forgotPasswordWrapper: {
+    marginBottom: "15px",
+  },
+  registerText: {
+    marginBottom: "15px",
+  },
+  registerLink: {
+    color: "red",
+    cursor: "pointer",
+    textDecoration: "none",
+  },
+};
+
 export const Login: React.FC = () => {
   const [userEmail, setUserEmail] = useState<string>();
   const [userPassword, setUserPassword] = useState<string>();
@@ -25,7 +60,6 @@ export const Login: React.FC = () => {
       );
       if (user) {
         console.log("Logged in user:", user);
-        // Redirect or update the UI as needed
       } else {
         console.log("Invalid email or password");
       }
@@ -37,24 +71,32 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Log in</h1>
-      <InputLogin
-        type="email"
-        setUserData={setUserEmail}
-        userData={userEmail}
-      />
-      <InputLogin
-        type="password"
-        setUserData={setUserPassword}
-        userData={userPassword}
-      />
-      <ButtonLogin onLogIn={handleLogIn} /> <br />
-      <ForgotPassword />
-      <p>
+    <div style={styles.container}>
+      <h1 style={styles.title}>Log in</h1>
+      <div style={styles.inputWrapper}>
+        <InputLogin
+          type="email"
+          setUserData={setUserEmail}
+          userData={userEmail}
+        />
+      </div>
+      <div style={styles.inputWrapper}>
+        <InputLogin
+          type="password"
+          setUserData={setUserPassword}
+          userData={userPassword}
+        />
+      </div>
+      <div style={styles.buttonWrapper}>
+        <ButtonLogin onLogIn={handleLogIn} />
+      </div>
+      <div style={styles.forgotPasswordWrapper}>
+        <ForgotPassword />
+      </div>
+      <p style={styles.registerText}>
         Don`t have an account?{" "}
         <a
-          style={{ color: "red", cursor: "pointer" }}
+          style={styles.registerLink}
           onClick={handleModalOpen}
         >
           Register
@@ -67,3 +109,5 @@ export const Login: React.FC = () => {
     </div>
   );
 };
+
+
