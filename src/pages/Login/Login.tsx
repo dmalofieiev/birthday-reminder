@@ -1,44 +1,12 @@
-import { ButtonLogin } from "../components/login/ButtonLogin";
-import { ForgotPassword } from "../components/login/ForgotPassword";
-import { InputLogin } from "../components/login/InputLogin";
+import { ButtonLogin } from "../../components/login/ButtonLogin";
+import { ForgotPassword } from "../../components/login/ForgotPassword";
+import { InputLogin } from "../../components/login/InputLogin";
 import { useState } from "react";
-import { SingUp } from "./SingUp";
-import { IUserData } from "../types/interfaces";
+import { SingUp } from "../SingUp/SingUp";
+import { IUserData } from "../../types/interfaces";
 
-const styles = {
-  container: {
-    display: "flex" as const,
-    flexDirection: "column" as const,
-    alignItems: "center" as const,
-    justifyContent: "center" as const,
-    height: "100vh",
-    backgroundColor: "#f0f0f0",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-  },
-  title: {
-    marginBottom: "20px",
-    color: "#333",
-  },
-  inputWrapper: {
-    marginBottom: "15px",
-  },
-  buttonWrapper: {
-    marginBottom: "15px",
-  },
-  forgotPasswordWrapper: {
-    marginBottom: "15px",
-  },
-  registerText: {
-    marginBottom: "15px",
-  },
-  registerLink: {
-    color: "red",
-    cursor: "pointer",
-    textDecoration: "none",
-  },
-};
+import styles from './Login.module.css'
+
 
 export const Login: React.FC = () => {
   const [userEmail, setUserEmail] = useState<string>();
@@ -71,32 +39,32 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Log in</h1>
-      <div style={styles.inputWrapper}>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Log in</h1>
+      <div className={styles.inputWrapper}>
         <InputLogin
           type="email"
           setUserData={setUserEmail}
           userData={userEmail}
         />
       </div>
-      <div style={styles.inputWrapper}>
+      <div className={styles.inputWrapper}>
         <InputLogin
           type="password"
           setUserData={setUserPassword}
           userData={userPassword}
         />
       </div>
-      <div style={styles.buttonWrapper}>
+      <div className={styles.buttonWrapper}>
         <ButtonLogin onLogIn={handleLogIn} />
       </div>
-      <div style={styles.forgotPasswordWrapper}>
+      <div className={styles.forgotPasswordWrapper}>
         <ForgotPassword />
       </div>
-      <p style={styles.registerText}>
+      <p className={styles.registerText}>
         Don`t have an account?{" "}
         <a
-          style={styles.registerLink}
+          className={styles.registerLink}
           onClick={handleModalOpen}
         >
           Register
