@@ -6,7 +6,17 @@
       "surName": "dimon",
       "email": "maloy34522@gmail.com",
       "password": "123123123",
-      "dateOfBirth": "1996-11-22"
+      "dateOfBirth": "1996-11-22",
+      "category": "the boy"
+    },
+    {
+      "id": "7f1640a1-89a0-415e-af1e-d693e029280f",
+      "name": "Вадим",
+      "surName": "Сухомлинов",
+      "email": "a@a",
+      "password": "2",
+      "dateOfBirth": "1990-02-04",
+      "category": "FrontEnd"
     }
   ]
 }

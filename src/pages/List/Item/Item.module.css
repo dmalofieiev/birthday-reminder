@@ -1,0 +1,16 @@
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.field {
+    padding: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
