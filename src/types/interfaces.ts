@@ -3,6 +3,7 @@ import {
     BaseQueryFn,
     TypedMutationTrigger,
 } from "@reduxjs/toolkit/query/react";
+
 /**
  * @param {string} login
  * @param {string} password
@@ -71,22 +72,17 @@ export interface IUserInput {
 }
 
 /**
- * @param {string} id
- * @param {string} name
- * @param {string} surName
- * @param {string} email
- * @param {string} password
- * @param {string} dateOfBirth
+ * @param {IUserData} user
  */
-// export interface IGetUser {
-//     map(
-//         arg0: (user: IGetUser) => import("react/jsx-runtime").JSX.Element
-//     ): import("react").ReactNode;
-//     category: string;
-//     id: string;
-//     name: string;
-//     surName: string;
-//     email: string;
-//     password: string;
-//     dateOfBirth: string;
-// }
+export interface ItemProps {
+    user: IUserData;
+    openEditModal: (user: IUserData) => void;
+}
+/**
+ * @param {IUserData} user
+ * @param {boolean} setEdit
+ */
+export interface ItemEditProps {
+    user: IUserData;
+    setEdit: Dispatch<SetStateAction<boolean>>;
+}

@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
 import { useCreateDataMutation, useGetDataQuery } from "../../api/api";
 import { IUserData } from "../../types/interfaces";
-import Item from "./Item/Item";
+import { Item } from "./Item/Item";
 import styles from "./List.module.css";
 import { CreateUsers } from "./../../components/CreateUsers/CreateUsers";
+import { EditUser } from "../../components/EditUser/EditUser";
 
 export const List: React.FC = () => {
     const { data: users = [] } = useGetDataQuery();
-    const [dataUsers, setDataUsers] = useState<IUserData[]>([]);
+    const [dataUsers, setDataUsers] = useState<IUserData[]>(users);
     const [isCreating, setIsCreating] = useState<boolean>(false);
+    const [isEdit, setEdit] = useState<boolean>(false);
+    const [editingUser, setEditingUser] = useState<IUserData | null>(null);
+
+    const [createNewData] = useCreateDataMutation();
 
     useEffect(() => {
         setDataUsers(users);
     }, [users]);
 
-    {
-        /* Create directory */
-    }
-    const [createNewData] = useCreateDataMutation();
+    const openEditModal = (user: IUserData) => {
+        setEditingUser(user);
+        setEdit(true);
+    };
 
     return (
         <div className={styles.container}>
@@ -30,7 +35,7 @@ export const List: React.FC = () => {
             <div className={styles.userList}>
                 {dataUsers.map((user: IUserData) => (
                     <div key={user.id}>
-                        <Item user={user} />
+                        <Item user={user} openEditModal={openEditModal} />
                     </div>
                 ))}
             </div>
@@ -40,6 +45,10 @@ export const List: React.FC = () => {
                     isCreateSet={setIsCreating}
                     createData={createNewData}
                 />
+            )}
+
+            {isEdit && editingUser && (
+                <EditUser setEdit={setEdit} user={editingUser} />
             )}
         </div>
     );

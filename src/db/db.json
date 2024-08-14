@@ -1,22 +1,22 @@
 {
   "users": [
     {
-      "id": "eae5ab87-b231-4b31-8ad7-b30622be2268",
       "name": "dimon",
-      "surName": "dimon",
+      "surName": "Malofieiev",
       "email": "maloy34522@gmail.com",
       "password": "123123123",
       "dateOfBirth": "1996-11-22",
-      "category": "the boy"
+      "category": "the boy",
+      "id": "eae5ab87-b231-4b31-8ad7-b30622be2268"
     },
     {
-      "id": "7f1640a1-89a0-415e-af1e-d693e029280f",
       "name": "Вадим",
       "surName": "Сухомлинов",
       "email": "a@a",
       "password": "2",
       "dateOfBirth": "1990-02-04",
-      "category": "FrontEnd"
+      "category": "Front-End",
+      "id": "f718df60-d7d1-411a-a3ab-7d054c038408"
     }
   ]
 }

@@ -57,7 +57,7 @@ export const CreateUsers: React.FC<ICreateUsers> = ({
                 }}
             >
                 <DialogContent>
-                    <DialogTitle>Registration</DialogTitle>
+                    <DialogTitle>Create New Member</DialogTitle>
                     <h4>Name</h4>
                     <TextField
                         name="name"
@@ -113,7 +113,7 @@ export const CreateUsers: React.FC<ICreateUsers> = ({
                         onChange={handleInputChange}
                     />
                 </DialogContent>
-                <Button onClick={handleCreateData}>Sing Up</Button>
+                <Button onClick={handleCreateData}>Create</Button>
                 <Button onClick={handleCloseModal}>Cancel</Button>
             </Dialog>
         </Box>

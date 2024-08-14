@@ -18,6 +18,14 @@ export const dataApi = createApi({
             }),
             invalidatesTags: ["data"],
         }),
+        editData: builder.mutation<void, IUserData>({
+            query: ({ id, ...userData }) => ({
+                url: `users/${id}`,
+                method: "PUT",
+                body: userData,
+            }),
+            invalidatesTags: ["data"],
+        }),
         deleteData: builder.mutation<void, IUserData>({
             query: ({ id }) => ({
                 url: `users/${id}`,
@@ -28,5 +36,9 @@ export const dataApi = createApi({
     }),
 });
 
-export const { useGetDataQuery, useCreateDataMutation, useDeleteDataMutation } =
-    dataApi;
+export const {
+    useGetDataQuery,
+    useCreateDataMutation,
+    useDeleteDataMutation,
+    useEditDataMutation,
+} = dataApi;
